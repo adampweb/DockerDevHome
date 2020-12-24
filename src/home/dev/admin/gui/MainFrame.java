@@ -5,6 +5,7 @@ import home.dev.admin.control.*;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+import java.io.PrintStream;
 
 public class MainFrame {
     private final JFrame frame;
@@ -61,6 +62,10 @@ public class MainFrame {
         frame.setMinimumSize(new Dimension(1000, 600));
 
         CommonControl.centreWindow(frame);
+
+        PrintStream printStream = new PrintStream(new CustomOutputStream(this.getEventLogs()));
+        System.setOut(printStream);
+        System.setErr(printStream);
 
         frame.pack();
         frame.setVisible(true);
