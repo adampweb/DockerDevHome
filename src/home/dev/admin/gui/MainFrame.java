@@ -7,7 +7,7 @@ import java.awt.*;
 import java.io.IOException;
 
 public class MainFrame {
-    private JFrame frame;
+    private final JFrame frame;
     private JPanel rootPanel;
     private JTabbedPane tabbedPane1;
     private JPanel projectsPanel;
@@ -18,7 +18,38 @@ public class MainFrame {
     private JTable containersTable;
 
     public JFrame getFrame(){
-        return this.frame;
+        return frame;
+    }
+    public JPanel getRootPanel() {
+        return rootPanel;
+    }
+
+    public JTabbedPane getTabbedPane1() {
+        return tabbedPane1;
+    }
+
+    public JPanel getProjectsPanel() {
+        return projectsPanel;
+    }
+
+    public JPanel getContainersPanel() {
+        return containersPanel;
+    }
+
+    public JPanel getLogsPanel() {
+        return logsPanel;
+    }
+
+    public JTextArea getEventLogs() {
+        return eventLogs;
+    }
+
+    public JTable getProjectsTable() {
+        return projectsTable;
+    }
+
+    public JTable getContainersTable() {
+        return containersTable;
     }
 
     public MainFrame() throws IOException {
